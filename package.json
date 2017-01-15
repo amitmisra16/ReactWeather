@@ -4,12 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
-=======
-    "test": "echo \"Error: no test specified\" && exit 1"
->>>>>>> 0a1d5ff5ce29159062efc47ced8a69a4f8414623
   },
   "author": "Amit Misra",
   "license": "MIT",
