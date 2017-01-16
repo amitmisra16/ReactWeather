@@ -5,7 +5,7 @@ var WeatherMessage = (props) => {
     return (<p>The weather of city {props.city} is {props.weather}</p>);
   } else {
     return (<p></p>);
-  }
+  }  
 }
 
 module.exports = WeatherMessage;
