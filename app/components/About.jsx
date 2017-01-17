@@ -1,5 +1,4 @@
 var React = require('react');
-var {Link} = require('react-router');
 
 var About = (props) => {
   return (
@@ -7,9 +6,9 @@ var About = (props) => {
       <h1 className="text-center">About</h1>
       <p>React Weather app created while doing Udemy course by Andrew Mead</p>
       <ol>
-        <li><Link to="https://github.com/amitmisra16/ReactWeather">Github Repository</Link></li>
-        <li><Link to="http://openweathermap.org/city">OpenweatherMap</Link></li>
-        <li><Link to="https://ancient-bastion-62453.herokuapp.com/">Heroku App</Link></li>
+        <li><a href="https://github.com/amitmisra16/ReactWeather">Github Repository</a></li>
+        <li><a href="http://openweathermap.org/city">OpenweatherMap</a></li>
+        <li><a href="https://ancient-bastion-62453.herokuapp.com/">Heroku App</a></li>
       </ol>
     </div>
   );
