@@ -10,15 +10,14 @@ module.exports = {
 
     return axios.get(requestUrl).then(function(response){
       if (response.data.cod && response.data.message) {
-        console.log(response.data);
         throw new Error(response.data.message);
       } else {
         return response.data.main.temp;
       }
 
-    }, function(respone) {
-      console.log(response.data);
-      throw new Error(response.data.message);
+    }, function(err) {
+      throw new Error(err.response.data.message);
+      // throw new Error('Unable to fetch weather for that location');
     });
 
   }

@@ -1,7 +1,8 @@
 var React = require('react');
-var WeatherMessage = require('WeatherMessage')
-var WeatherForm = require('WeatherForm')
-var openWeatherMap = require('openWeatherMap')
+var WeatherMessage = require('WeatherMessage');
+var WeatherForm = require('WeatherForm');
+var openWeatherMap = require('openWeatherMap');
+var ErrorModel = require('ErrorModel');
 
 var Weather = React.createClass({
 
@@ -13,7 +14,12 @@ var Weather = React.createClass({
 
   handleCityInput: function(c) {
     var that = this;
-    this.setState({isLoading: true});
+    this.setState(
+      {
+        isLoading: true,
+        isError: undefined
+      }
+    );
     debugger;
     openWeatherMap.getTemprature(c).then((temp) => {
       this.setState({
@@ -21,29 +27,44 @@ var Weather = React.createClass({
         weather: temp,
         isLoading: false
       });
-    }, (errorMessage) => {
-        this.setState({isLoading: false});
-        alert(errorMessage);
+    }, (e) => {
+        this.setState(
+          {
+            cityName: c,
+            isLoading: false,
+            isError: e.message
+          }
+        );
     });
 
   },
 
   render: function() {
-    var {cityName, weather, isLoading} = this.state;
+    var {cityName, weather, isLoading,isError} = this.state;
 
     function renderMessage () {
       if (isLoading) {
-        return <h3>Fetching weather...</h3>;
+        return <h3 className="text-center">Fetching weather...</h3>;
       } else if (cityName && weather) {
         return <WeatherMessage city={cityName} weather={weather} />;
       }
     }
 
+    function renderErrorModel() {
+      var summary = 'Unable to fetch weather for city ' + cityName;
+      if( typeof isError === 'string' ) {
+        return (
+          <ErrorModel header='Get Weather' summary={summary} description={isError}/>
+        );
+      }
+    }
+
     return (
       <div>
-        <h1 className="text-center">Get Weather</h1>
+        <h1 className="text-center page-title">Get Weather</h1>
         <WeatherForm onCityNameInput={this.handleCityInput} />
         {renderMessage()}
+        {renderErrorModel()}
       </div>
     );
   }
