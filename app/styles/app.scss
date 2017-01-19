@@ -1,0 +1,23 @@
+$space-large: 2.5rem;
+$space-small: 1rem;
+$title-color: purple;
+
+.page-title {
+  color: $title-color;
+  margin-top: $space-large;
+  margin-bottom: $space-large;
+}
+
+.nav-text {
+  margin-left: $space-small;
+  margin-right: $space-small;
+}
+
+.nav-button {
+  margin-left: $space-small;
+  margin-right: $space-small;
+}
+
+input[type=search] {
+  box-shadow: none;
+}
