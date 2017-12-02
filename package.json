@@ -23,12 +23,14 @@
     "babel-preset-react": "^6.16.0",
     "babel-preset-stage-0": "^6.16.0",
     "css-loader": "^0.26.1",
-    "foundation-sites": "^6.3.0",
+    "formik": "^0.10.5",
+    "foundation-sites": "^6.4.3",
     "jquery": "^3.1.1",
     "node-sass": "^4.3.0",
     "sass-loader": "^4.1.1",
     "script-loader": "^0.7.0",
     "style-loader": "^0.13.1",
-    "webpack": "^1.14.0"
+    "webpack": "^1.14.0",
+    "yup": "^0.23.0"
   }
 }

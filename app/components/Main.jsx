@@ -5,10 +5,10 @@ var Main = (props) => {
   return (
     <div>
       <Nav />
-      <div className="row">
-          <div className="medium-6 large-4 columns small-centered">
+      <div className="grid-x grid-padding-x">
+        <div className="large-6 medium-6 cell centered">
               {props.children}
-          </div>
+        </div>
       </div>
     </div>
   );
